@@ -11,4 +11,7 @@ export class Users implements User {
 
   @Column('varchar', { length: 100 })
   password: string;
+
+  @Column('varchar', { length: 10 })
+  rol: 'admin' | 'user';
 }

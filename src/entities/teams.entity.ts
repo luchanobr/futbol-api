@@ -1,5 +1,6 @@
 import { Team } from '@/interfaces/team.interface';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Confederations } from './confederations.entity';
 
 @Entity()
 export class Teams implements Team {
@@ -15,9 +16,16 @@ export class Teams implements Team {
   @Column('varchar', { length: 10 })
   code: string;
 
-  @Column('varchar', { length: 10 })
-  iso2: string;
+  @Column('varchar', { length: 100 })
+  federation: string;
 
-  @Column('varchar', { length: 1 })
-  group: string;
+  @Column('varchar', { length: 10 })
+  federationCode: string;
+
+  @Column('varchar', { length: 150 })
+  federationFlag: string;
+
+  @OneToOne(() => Confederations)
+  @JoinColumn()
+  confederation: Confederations;
 }

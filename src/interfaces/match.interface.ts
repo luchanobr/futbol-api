@@ -18,6 +18,7 @@ const match = z.object({
   teamAwayScore: z.number().int().nonnegative().default(0),
   penaltiesHome: z.number().int().nonnegative().optional(),
   penaltiesAway: z.number().int().nonnegative().optional(),
+  isFinished: z.boolean().default(false),
 });
 
 type Match = z.output<typeof match>;

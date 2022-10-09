@@ -1,2 +1,2 @@
-# world-cup-2022-api
-Qatar FIFA world cup 2022 API
+# futbol-api
+API de la Selecion Argentina de futbol AFA
